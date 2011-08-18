@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='interface.xsl'?>
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" uri="http://gfxmonk.net/dist/0install/tail-logs.xml">
+	<name>tail-logs</name>
+	<summary>tail multiple logs</summary>
+	<description>
+Tail multiple logs (using tmux)
+	</description>
+	<group main="tail-logs">
+		<requires interface="http://gfxmonk.net/dist/0install/bash_escape.xml"/>
+		<requires interface="http://gfxmonk.net/dist/0install/tmux-custom.xml"/>
+		<environment insert="" mode="prepend" name="PATH"/>
+		<implementation id="sha1new=d35475dbe7766cab51c92ddfb51eed15e8e8fadb" released="2011-08-18" version="0.1">
+			<manifest-digest sha256="36b36cd32b0e352dd0f764ea736131925a67503141c9698f66cd9a21307c3356"/>
+			<archive href="http://gfxmonk.net/dist/0install/tail-logs/tail-logs-0.1.tgz" size="537"/>
+		</implementation>
+	</group>
+</interface>
