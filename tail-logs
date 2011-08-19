@@ -13,9 +13,9 @@ def main(filenames):
 	command = ['0launch', '-c', tmux, 'new-session', ';']
 	for filename in filenames:
 		command.extend(['split-window', '-h', follow_cmd(filename), ';'])
+		command.extend(['select-layout', 'even-horizontal', ';'])
 	command.extend(['kill-pane', '-t', '0', ';'])
 	command.extend(['bind-key', 'q', 'kill-window', '-t', ':0', ';'])
-	command.extend(['select-layout', 'even-horizontal'])
 
 	#print repr(command)
 	os.execvp("0launch", command)
