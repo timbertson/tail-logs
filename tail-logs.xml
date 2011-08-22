@@ -14,5 +14,9 @@ Tail multiple logs (using tmux)
 			<manifest-digest sha256="36b36cd32b0e352dd0f764ea736131925a67503141c9698f66cd9a21307c3356"/>
 			<archive href="http://gfxmonk.net/dist/0install/tail-logs/tail-logs-0.1.tgz" size="537"/>
 		</implementation>
+		<implementation id="sha1new=546077b1c47f4a0aa8aa75ca7b73b4fe70899f0e" released="2011-08-19" version="0.2">
+			<manifest-digest sha256="3a52172392396bdefbff4f8366d8d959a6c881f4d08ef0fa3bfb9bbe3aa1af26"/>
+			<archive href="http://gfxmonk.net/dist/0install/tail-logs/tail-logs-0.2.tgz" size="537"/>
+		</implementation>
 	</group>
 </interface>
