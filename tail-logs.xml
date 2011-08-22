@@ -7,7 +7,6 @@
 Tail multiple logs (using tmux)
 	</description>
 	<group main="tail-logs">
-		<requires interface="http://gfxmonk.net/dist/0install/bash_escape.xml"/>
 		<requires interface="http://gfxmonk.net/dist/0install/tmux-custom.xml"/>
 		<environment insert="" mode="prepend" name="PATH"/>
 		<implementation id="sha1new=d35475dbe7766cab51c92ddfb51eed15e8e8fadb" released="2011-08-18" version="0.1">
