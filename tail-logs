@@ -2,10 +2,11 @@
 
 import sys
 import os
-import bash_escape
 
 def follow_cmd(f):
-	return "less -SR +F --follow-name %s" % (bash_escape.escape(f),)
+	if "'" in f:
+		raise RuntimeError("Please don't use a file with a single quote character (you know how bash hates that)")
+	return "less -SR +F --follow-name '%s'" % (f,)
 
 def main(filenames):
 	assert len(filenames) > 0, "please provide at least one file"
@@ -13,9 +14,10 @@ def main(filenames):
 	command = ['0launch', '-c', tmux, 'new-session', ';']
 	for filename in filenames:
 		command.extend(['split-window', '-h', follow_cmd(filename), ';'])
+		command.extend(['select-layout', 'tiled', ';'])
 	command.extend(['kill-pane', '-t', '0', ';'])
+	command.extend(['select-layout', 'even-horizontal', ';'])
 	command.extend(['bind-key', 'q', 'kill-window', '-t', ':0', ';'])
-	command.extend(['select-layout', 'even-horizontal'])
 
 	#print repr(command)
 	os.execvp("0launch", command)
@@ -23,4 +25,3 @@ def main(filenames):
 if __name__ == '__main__':
 		main(sys.argv[1:])
 		sys.exit(1)
-
